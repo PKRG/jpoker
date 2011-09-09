@@ -1,0 +1,16 @@
+*~
+*.swp
+*.orig
+tests
+jpoker/sites/pokersource.eu*/sources/standalone*
+*.mo
+*.swf
+*.wav
+gems
+messages.pot
+soundswiff
+*.pyc
+binary
+mockup_plain.svg
+mockup.html
+jpoker-binary*
