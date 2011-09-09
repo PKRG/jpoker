@@ -21,7 +21,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" id="html">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Earthquake Poker</title>
+	<title>JPoker PHP Example</title>
 	<link href="../css/jpoker.css" rel="stylesheet" type="text/css" />
 	<script language="JavaScript" type="text/javascript" src="../jquery/jquery-1.2.6.js"></script>
 	<script language="JavaScript" type="text/javascript" src="../jquery/ui/ui.core.js"></script>

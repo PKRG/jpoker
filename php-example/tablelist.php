@@ -21,7 +21,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" id="html">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Earthquake Poker</title>
+	<title>JPoker PHP Example</title>
 	<link href="../css/jpoker.css" rel="stylesheet" type="text/css" />
 	<script language="JavaScript" type="text/javascript" src="../jquery/jquery-1.2.6.js"></script>
 	<script language="JavaScript" type="text/javascript" src="../jquery/ui/ui.core.js"></script>
@@ -37,12 +37,12 @@
 	<script language="JavaScript" type="text/javascript" src="../js/json2.js"></script>
 	<script language="JavaScript" type="text/javascript" src="../js/jquery.jpoker.js"></script>
 	<script language="JavaScript" type="text/javascript" src="../js/mockup.js"></script>
-        <script language="JavaScript" type="text/javascript">
+	<script language="JavaScript" type="text/javascript">
 	$.jpoker.verbose = 2;
 	$(document).ready(function() {
 		$('#main').jpoker('tableList', '/POKER_REST', {link_pattern: 'pokertable.php?game_id={game_id}'});
 	});
-        </script>
+	</script>
 </head>
 <body>
 	<div id="main"></div>
