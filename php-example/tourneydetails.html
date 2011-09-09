@@ -38,13 +38,16 @@
 	<script language="JavaScript" type="text/javascript" src="../js/jquery.jpoker.js"></script>
 	<script language="JavaScript" type="text/javascript" src="../js/mockup.js"></script>
 	<script language="JavaScript" type="text/javascript">
-	$.jpoker.verbose = 2;
-	$(document).ready(function() {
-		$('#main').jpoker('tableList', '/POKER_REST', {link_pattern: 'pokertable.php?game_id={game_id}'});
-	});
+		var m = window.location.href.match(/tourney_serial=([0-9]+)/);
+		var tourney_serial = (m && m[1]) ? m[1] : null;
+		$.jpoker.verbose = 2; var restURL = '/POKER_REST';
+		$(document).ready(function() {
+			$('#main').jpoker('tourneyDetails', restURL, tourney_serial);
+		});
 	</script>
 </head>
 <body>
+	<div id="login"></div>
 	<div id="main"></div>
 </body>
 </html>

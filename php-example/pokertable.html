@@ -37,19 +37,25 @@
 	<script language="JavaScript" type="text/javascript" src="../js/json2.js"></script>
 	<script language="JavaScript" type="text/javascript" src="../js/jquery.jpoker.js"></script>
 	<script language="JavaScript" type="text/javascript" src="../js/mockup.js"></script>
-        <script language="JavaScript" type="text/javascript">
-	$.jpoker.verbose = 2;
-        var restURL = '/POKER_REST';
-	$(document).ready(function() {
-                $.jpoker.server.defaults.spawnTable = function(server, packet) {
-                        $('#main').jpoker('table', restURL, packet.game_id, packet.name);
-                }
-                var server = $.jpoker.url2server({url:restURL});
-                server.tableJoin(<? echo $_GET['game_id']; ?>);
-	});
-        </script>
+	<script language="JavaScript" type="text/javascript">
+		$.jpoker.verbose = 2; var restURL = '/POKER_REST';
+		var m = window.location.href.match(/game_id=([0-9]+)/);
+		var game_id = (m && m[1]) ? parseInt(m[1],10) : null;
+		$(document).ready(function() {
+				$.jpoker.server.defaults.spawnTable = function(server, packet) {
+						$('#login').jpoker('login', restURL);
+						$('#main').jpoker('table', restURL, packet.game_id, packet.name);
+				}
+				var server = $.jpoker.url2server({url: restURL});
+
+				if (game_id) server.tableJoin(game_id);
+				else alert('No game_id passed as parameter');
+		});
+	</script>
 </head>
 <body>
+	<div><h3>Poker Table</h3></div>
+	<div id="login"></div>
 	<div id="main"></div>
 </body>
 </html>
