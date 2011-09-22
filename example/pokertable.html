@@ -43,13 +43,13 @@
 		var game_id = (m && m[1]) ? parseInt(m[1],10) : null;
 		$(document).ready(function() {
 				$.jpoker.server.defaults.spawnTable = function(server, packet) {
-						$('#login').jpoker('login', restURL);
 						$('#main').jpoker('table', restURL, packet.game_id, packet.name);
 				}
 				var server = $.jpoker.url2server({url: restURL});
 
 				if (game_id) server.tableJoin(game_id);
 				else alert('No game_id passed as parameter');
+                $('#login').jpoker('login', restURL);
 		});
 	</script>
 </head>

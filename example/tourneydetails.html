@@ -42,7 +42,7 @@
 		var tourney_serial = (m && m[1]) ? m[1] : null;
 		$.jpoker.verbose = 2; var restURL = '/POKER_REST';
 		$(document).ready(function() {
-			$('#main').jpoker('tourneyDetails', restURL, tourney_serial);
+			$('#main').jpoker('tourneyDetails', restURL, tourney_serial,'',{link_pattern: 'pokertable.html?game_id={game_id}'});
 		});
 	</script>
 </head>
