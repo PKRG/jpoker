@@ -1,3 +1,9 @@
+jpoker (2.0.0-2) unstable; urgency=low
+
+  * Removed README.binary (same as README), updated README
+
+ -- Andor Goetzendorff <andor@pokermania.de>  Thu, 06 Oct 2011 17:23:00 +0200
+
 jpoker (2.0.0-1) unstable; urgency=low
 
   * New upstream version

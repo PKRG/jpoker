@@ -25,17 +25,26 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or (at
 your option) any later version
 
-Installation
+Example Usage
 
-1) unpack the jpoker-binary-*.tar.gz archive 
-2) edit the index.html page, look for config.jpoker and make sure only
-   config.jpoker = { restURL : 'http://pokersource.eu/POKER_REST' };
-   is uncommented
-4) if you have firebug installed, go to the Net tab, then Options and
-   disable network monitoring
-3) open file:///index.html with iceweasel or firefox (version 2 or 3)
-   do not open it from a locally installed web server otherwise you will
-   be forbiden to access the http://pokersource.eu/POKER_REST server because of
-   cross browser restrictions
+1)  point your web server to the repository root
+2a) if you want to use an instance of python-poker-network with jpoker,
+    make sure you proxy the poker server under the same port and domain as the
+    jpoker url (see example config below).
+2b) in any other case change restURL in all ./example/*.html files to the
+    appropriate URL.
+3)  point your web browser to /example/index.html
 
-Loic Dachary <loic@dachary.org>
+Example Nginx Configuration
+upstream {
+    server localhost:19384;
+}
+server {
+    root /path/to/jpoker/checkout/path;
+
+    location /POKER_REST {
+        proxy_pass http://pokernetwork/POKER_REST;
+    }
+}
+
+Andor Goetzendorff <andor@pokermania.de>
