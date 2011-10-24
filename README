@@ -36,14 +36,11 @@ Example Usage
 3)  point your web browser to /example/index.html
 
 Example Nginx Configuration
-upstream {
-    server localhost:19384;
-}
 server {
     root /path/to/jpoker/checkout/path;
 
     location /POKER_REST {
-        proxy_pass http://pokernetwork/POKER_REST;
+        proxy_pass http://localhost:19384/POKER_REST;
     }
 }
 
